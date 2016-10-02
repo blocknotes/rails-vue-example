@@ -16,5 +16,11 @@
 !/log/.keep
 /tmp
 
+# Reserved files
+config/secrets.yml
+
+# Assets
+public/assets/
+
 # Bower components
 vendor/assets/
