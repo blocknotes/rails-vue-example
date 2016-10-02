@@ -1,3 +1,5 @@
+<% environment.context_class.instance_eval { include ApplicationHelper } %>
+
 Vue.component( 'a-clock', {
   props: [ 'init-hour', 'init-min' ],
   data: function() {
@@ -6,7 +8,7 @@ Vue.component( 'a-clock', {
       min: ''
     }
   },
-  template: "<%= Slim::Template.new( 'app/views/components/clock/clock.html.slim' ).render().gsub( '"', '\"' ) %>",
+  template: "<%= slim_comp_render( 'clock/clock.html.slim' ) %>",
   created: function () {
     console.log( '[clock] created' );
     this.dt = new Date( Date.UTC( 2000, 0, 1, this.initHour, this.initMin - 1, 0 ) );
