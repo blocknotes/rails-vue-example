@@ -77,3 +77,7 @@ new Vue({
 ```
 
 - app/views/components/clock/: create a new component with *clock.sass*, *clock.js.erb*, *clock.html.slim*
+
+## Notes
+
+- Slim templates are rendered when the asset pipeline is precompiled, so we need to avoid to call server side function to fetch data; instead we can use AJAX to load data remotely for example using [vue-resource](https://github.com/vuejs/vue-resource).
