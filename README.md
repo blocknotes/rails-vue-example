@@ -2,6 +2,8 @@
 
 A simple starter project to use Vue.js with Ruby on Rails 4
 
+A Vue component to show hours and minutes:
+
 ![Rails Vue example](https://raw.githubusercontent.com/blocknotes/rails-vue-example/master/screenshot.png "Rails Vue example")
 
 ## Rails & Vue setup
