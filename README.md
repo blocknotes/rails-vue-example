@@ -1,33 +1,47 @@
 # Rails Vue example
 
-A simple starter project to use Vue.js with Ruby on Rails 4
+A simple starter project to use Vue.js with Ruby on Rails using the asset pipeline
 
 A Vue component to show hours and minutes:
 
 ![Rails Vue example](https://raw.githubusercontent.com/blocknotes/rails-vue-example/master/screenshot.png "Rails Vue example")
 
+To run this example just *git clone*, *bundle* and start the server.
+
+This uses a *gem* to pull in vue. Since rails 5.1 the setup can be achieved
+using webpacker too, but this example shows how to avoid that complexity.
+
 ## Rails & Vue setup
+
+How to create a basic app (like this) , just
 
 - Create a basic web app:
 ```sh
-rails _4.2.5.2_ new rails-vue-example -j --skip-spring --skip-turbolinks
+rails new rails-vue-example -j --skip-spring --skip-turbolinks
 ```
 
 - Create a controller (ex. *home*), a view (ex. *home/index*) and setup a default route (ex. *home#index*)
 
-- Setup *bower-rails*:
-```sh
-rails g bower_rails:initialize
-echo -e "\nasset 'vue'" >>! Bowerfile
-rake bower:update
+- Add *vuejs-rails* to *Gemfile*
+```ruby
+  gem "vuejs-rails"
 ```
 
 - Add *vue.js* reference to *application.js* (or .coffee):
 ```ruby
-//= require vue/dist/vue
+//= require vue
 ```
 
+At this point you can start using the Vue instance in javascript files and
+vue syntax in your templates.
+
 ## Vue components setup
+
+It is also possible to use Vue components with above setup, but they will have to
+be located in the asset tree.
+
+To load components from an "app/views/components" directory, you can follow the
+steps below
 
 - app/assets/javascripts/application.js: add
 ```ruby
