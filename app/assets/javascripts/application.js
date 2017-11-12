@@ -14,6 +14,6 @@
 //= require jquery_ujs
 // OFF require_tree .
 //
-//= require vue/dist/vue
+//= require vue
 //= require components_init
 //= require init
